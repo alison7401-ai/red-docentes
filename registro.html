@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Red de Docentes</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    body {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .registro-box {
+      background: #1a252f;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 450px;
+      color: white;
+    }
+
+    .registro-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .registro-box label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .registro-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    .registro-box button {
+      width: 100%;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .registro-box button:hover {
+      background: #c0392b;
+    }
+
+    .registro-box .footer {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .registro-box .footer a {
+      color: #00bfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .registro-box .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="registro-box">
+    <h2>Registro de Usuario</h2>
+    <form id="registroForm">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" required>
+
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" required>
+
+      <label for="centro">Centro educativo:</label>
+      <input type="text" id="centro" required>
+
+      <label for="clave">Contraseña:</label>
+      <input type="password" id="clave" required>
+
+      <button type="submit">Registrarse</button>
+    </form>
+    <div class="footer">
+      ¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registroForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const centro = document.getElementById('centro').value.trim();
+      const clave = document.getElementById('clave').value.trim();
+
+      if (nombre && correo && centro && clave) {
+        const usuario = {
+          nombre: nombre,
+          correo: correo,
+          centro: centro,
+          clave: clave
+        };
+
+        try {
+          localStorage.setItem('usuarioRegistrado', JSON.stringify(usuario));
+          alert('✅ Registro exitoso. Bienvenida, ' + nombre);
+          window.location.href = 'login.html';
+        } catch (error) {
+          alert('⚠️ No se pudo guardar la cuenta. Verifica que el navegador permita almacenamiento local.');
+          console.error('Error al guardar en localStorage:', error);
+        }
+      } else {
+        alert('❌ Por favor, completa todos los campos.');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red de Docentes de Preuniversitario</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+    }
+
+    header {
+      background: #1a252f;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    .btn-login {
+      background: #00bfff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-login:hover {
+      background: #0099cc;
+    }
+
+    .hero {
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-join {
+      background: #e74c3c;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-join:hover {
+      background: #c0392b;
+    }
+
+    .frase-inspiradora {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .frase-inspiradora p {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #f0f0f0;
+      margin-bottom: 20px;
+    }
+
+    .frase-inspiradora span {
+      font-weight: bold;
+    }
+
+    .frase-inspiradora img {
+      width: 100%;
+      max-width: 1200px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">📚 Red de Docentes</div>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="foro.html">Foro</a>
+      <a href="recursos.html">Recursos</a>
+    </nav>
+    <button class="btn-login" onclick="location.href='login.html'">Iniciar Sesión</button>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Bienvenidos a la Red de Docentes de Preuniversitario</h1>
+    <p>Conectando educadores para mejorar la enseñanza preuniversitaria</p>
+    <button class="btn-join" onclick="location.href='registro.html'">Únete Ahora</button>
+
+    <div class="frase-inspiradora">
+      <p>“La educación no cambia el mundo, cambia a las personas que van a cambiar el mundo.”<br>
+      <span>– Paulo Freire</span></p>
+      <img src="img/docentes-cuba.jpg" alt="Docentes cubanos trabajando">
+    </div>
+  </section>
+</body>
+</html>
